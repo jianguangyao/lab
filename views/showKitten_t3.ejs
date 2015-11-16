@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Show Kitten Registration</title>
+</head>
+<body>
+<H2 align="center">Matching Documents = <%= kittens.length %></H2>
+<br>
+<form action="/deleteKitty">
+<table border="1" cellpadding="5" cellspacing="5" align="center"">
+<caption>Kitten Registration</caption>
+	<tr><th>Name</th><th>Age</th><th>DELETE</th></tr>
+	<% for (var i=0; i<kittens.length; i++) { %>
+	  <tr>
+       <td><%= kittens[i].name %></td>
+       <td><%= kittens[i].age %></td>
+       <td><input type="checkbox" name="id" value="<%= kittens[i]._id %>"></td>
+      </tr>
+	<% } %>
+</table>
+<p style="text-align:center">
+<p align="center">
+<input type="submit" name="Delete">
+</p>
+</form>
+<p style="text-align:center">
+<p align="center">
+<a href="/">Go Home</a>
+</p>
+</body>
+</html>
